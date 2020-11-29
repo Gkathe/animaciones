@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformacion origrn</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-size: arial;
+        }
+        .container{
+            border: 1px solid red;
+            width: 100%;
+        }
+        .container:hover .cuadrado{
+            animation-play-state: paused;
+           
+        }
+        .cuadrado{
+            width: 200px;
+            height: 200px;
+            background: yellowgreen;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            display:flex;
+            margin: 20px;
+            /* transition: .3s; */
+            animation-name:cuadrado;
+            animation-duration:2s;
+            /*animation-delay: 1s; cunato tiempo se demora en lanzar la animacion */
+            animation-iteration-count: infinite; /*cunatas veces va a ocurrir la animacion*/
+            animation-timing-function: ease;/* ease,in, out, in out, linear // cubic-bezier(1,1,1,1) */
+            animation-direction: reverse;/*alternate(rebote)/ de donde empieza desde 0% 100% */
+            /*animation-fill-mode: forwards;/*forwards(propiedad final keyframe)cambio el modo de fucion /valor final cuando la aimacion se ejecure */
+            /*animation-play-state: paused; estado y como se esta moviendo pausada o corriendo */
+            position: relative;
+
+        }     
+        @keyframes cuadrado{
+            0% {/* estado inicio */
+                left:0;
+            }
+            100% {
+                left:calc(100% - 240px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cuadrado">
+            hola mundo!
+        </div>
+    </div>
+</body>
+</html>
